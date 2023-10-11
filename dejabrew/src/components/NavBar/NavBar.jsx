@@ -1,7 +1,8 @@
 import React from 'react'
 import Logo from '../../images/logo.png'
 import './NavBar.css'
-import Cart from '../../images/cart-shopping-solid.svg'
+import CartWidget from '../CartWidget/CartWidget'
+
 
 function NavBar() {
   return (
@@ -15,11 +16,7 @@ function NavBar() {
               <li href='#' >ACCESORIOS</li>
               <li href='#' >MAQUINARIA</li>
           </ul>
-          <div className='cart'>
-            <img  src={Cart} height='40px' />
-            <div className='cart-number'>0</div>
-
-          </div>
+          <CartWidget />
     </div>
   )
 }
