@@ -11,10 +11,10 @@ function NavBar() {
             <img src={Logo} alt='logo' />
           </div>
           <ul>
-              <li href='#' >CAFÉS DEL MUNDO</li>
-              <li href='#' >CAPSULAS</li>
-              <li href='#' >ACCESORIOS</li>
-              <li href='#' >MAQUINARIA</li>
+              <li><a href='#'>CAFÉS DEL MUNDO</a></li>
+              <li><a href='#'>CAPSULAS</a></li>
+              <li><a href='#'>ACCESORIOS</a></li>
+              <li><a href='#'>MAQUINARIA</a></li>
           </ul>
           <CartWidget />
     </div>

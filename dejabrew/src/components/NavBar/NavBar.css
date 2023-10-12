@@ -22,13 +22,14 @@
 
 }
 
-.nav ul li{
+.nav ul li a{
     margin: 0 10px;
     color: #F2A25C;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.nav ul li:hover{
+.nav ul li a:hover{
     color: #f3b986;
     cursor: pointer;
     text-decoration: underline;
