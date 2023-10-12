@@ -1,7 +1,8 @@
 import React from 'react'
 import Logo from '../../images/logo.png'
 import './NavBar.css'
-import Cart from '../../images/cart-shopping-solid.svg'
+import CartWidget from '../CartWidget/CartWidget'
+
 
 function NavBar() {
   return (
@@ -10,16 +11,12 @@ function NavBar() {
             <img src={Logo} alt='logo' />
           </div>
           <ul>
-              <li href='#' >CAFÉS DEL MUNDO</li>
-              <li href='#' >CAPSULAS</li>
-              <li href='#' >ACCESORIOS</li>
-              <li href='#' >MAQUINARIA</li>
+              <li><a href='#'>CAFÉS DEL MUNDO</a></li>
+              <li><a href='#'>CAPSULAS</a></li>
+              <li><a href='#'>ACCESORIOS</a></li>
+              <li><a href='#'>MAQUINARIA</a></li>
           </ul>
-          <div className='cart'>
-            <img  src={Cart} height='40px' />
-            <div className='cart-number'>0</div>
-
-          </div>
+          <CartWidget />
     </div>
   )
 }
