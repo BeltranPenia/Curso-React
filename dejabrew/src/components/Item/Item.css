@@ -1,0 +1,26 @@
+.item{
+    width: 25%;
+    padding: 20px;
+    margin: 2%;
+
+}
+
+.item img{
+    width: 80%;
+    object-fit: cover;
+    margin: 0 10%;
+}
+
+.item h3{
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-align: center;
+    color: rgb(23,12,15);
+}
+
+.item p{
+    font-size: 1rem;
+    margin: 10px 0;
+    text-align: center;
+    color: rgb(23,12,15);
+}
