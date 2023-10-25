@@ -1,0 +1,48 @@
+.counter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.counter .controls .button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgb(23,12,15);
+    color: #F2A25C;
+    font-weight: bold;
+    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.controls .button:hover{
+    background-color: #f3b986;
+    color: #000;
+}
+
+.counter .button{
+    background-color: rgb(23,12,15);
+    color: #F2A25C;
+    font-weight: bold;
+    border: 1px solid #000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.counter .button:hover{
+    background-color: #f3b986;
+    color: #000;
+}

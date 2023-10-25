@@ -5,7 +5,7 @@ import './CartWidget.css'
 function CartWidget() {
   return (
     <div className='cart'>
-        <img  src={Cart} height='40px' />
+        <img  src={Cart} height='40px' alt='cart'/>
         <div className='cart-number'>0</div>
     </div>
   )
