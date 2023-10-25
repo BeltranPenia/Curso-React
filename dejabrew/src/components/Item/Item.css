@@ -11,6 +11,11 @@
     margin: 0 10%;
 }
 
+.info{
+    display: flex;
+    justify-content: center;
+}
+
 .item h3{
     font-size: 1.2rem;
     margin: 10px 0;
@@ -23,4 +28,25 @@
     margin: 10px 0;
     text-align: center;
     color: rgb(23,12,15);
+}
+
+.info button{
+    border:none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.info button:hover{
+    color: rgb(23,12,15);
+    cursor: pointer;
+}
+
+.flip{
+    transform: rotateX(180deg);
+    transition: transform 0.5s;
+}
+
+.reset{
+    transform: rotateX(0deg);
+    transition: transform 0.5s;
 }
