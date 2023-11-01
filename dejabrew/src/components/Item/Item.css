@@ -2,7 +2,11 @@
     width: 25%;
     padding: 20px;
     margin: 2%;
+}
 
+.item .link{
+    text-decoration: none;
+    color: rgb(23,12,15);
 }
 
 .item img{
@@ -11,9 +15,9 @@
     margin: 0 10%;
 }
 
-.info{
-    display: flex;
-    justify-content: center;
+.item img:hover{
+    transform: scale(1.1);
+    transition: transform 0.5s;
 }
 
 .item h3{
@@ -28,17 +32,6 @@
     margin: 10px 0;
     text-align: center;
     color: rgb(23,12,15);
-}
-
-.info button{
-    border:none;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.info button:hover{
-    color: rgb(23,12,15);
-    cursor: pointer;
 }
 
 .flip{

@@ -14,10 +14,10 @@ function NavBar() {
             </Link>
           </div>
           <ul>
-              <li><Link to='/cafe'>CAFÉS DEL MUNDO</Link></li>
-              <li><Link to='/capsulas'>CAPSULAS</Link></li>
-              <li><Link to='/accesorios'>ACCESORIOS</Link></li>
-              <li><Link to='/maquinaria'>MAQUINARIA</Link></li>
+              <li><Link to='/category/cafe'>CAFÉS DEL MUNDO</Link></li>
+              <li><Link to='/category/capsulas'>CAPSULAS</Link></li>
+              <li><Link to='/category/accesorios'>ACCESORIOS</Link></li>
+              <li><Link to='/category/maquinaria'>MAQUINARIA</Link></li>
           </ul>
           <CartWidget />
     </div>
