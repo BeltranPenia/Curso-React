@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import './ItemDetailContainer.css';
-import Products from '../../json/Products.json';
+import {getDoc,doc} from 'firebase/firestore'
+import {db} from '../../services/FirebaseConfig'
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
 import Error from '../Error/Error';
@@ -14,13 +15,16 @@ function ItemDetailContainer() {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await new Promise((resolve) => {
-                    setTimeout(() => {
-                        resolve(Products.find((product) => product.id === parseInt(id)));
-                    }, 2000);
+                await getDoc(doc(db, 'products', id)).then(snapshot=>{
+                    if(snapshot.exists()){
+                        setLoading(false);
+                        setProduct({...snapshot.data(),id:snapshot.id});
+                    }
+                    else{
+                        console.log('No existe');
+                    }
                 });
-                setLoading(false);
-                setProduct(response);
+                
             }catch(error){
                 console.error(error);
             }

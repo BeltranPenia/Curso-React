@@ -2,18 +2,19 @@ import React from 'react'
 import './ItemDetail.css'
 import ItemCounter from '../ItemCounter/ItemCounter'
 
-function ItemDetail({id, name, description, price, stock, pictureUrl}) {
+function ItemDetail(product) {
 
-  console.log('ItemDetail', id, name, description, price, stock, pictureUrl)
+  //id, name, description, price, stock, pictureUrl
+
   return (
     <div className='detail-container'>
-        <img src={pictureUrl} alt={name}/>
+        <img src={product.pictureUrl} alt={product.name}/>
         <div className='info'>
-          <h2>{name}</h2>
-          <p>{description}</p>
-          <p>${price}</p>
-          <p>STOCK: {stock}</p>
-          <ItemCounter stock={stock} initial={0} />
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>${product.price}</p>
+          <p>STOCK: {product.stock}</p>
+          <ItemCounter product={product} initial={1} />
         </div>
     </div>
     

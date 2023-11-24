@@ -1,0 +1,70 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    background-color: #f7f3ef;
+}
+
+.cart-container .row:nth-child(even){
+    background-color: #f2a25c;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    
+}
+
+.cart-image{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #f7f3ef;
+}
+
+.trash-can{
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    color: rgb(23,12,15);
+    cursor: pointer;
+}
+
+.total{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: 20px;
+}
+
+.erase,.check{
+    width: 30%;
+    height: 40px;
+    margin: 20px;
+    background-color: rgb(23,12,15);
+    color: #f2a25c;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy{
+    background-color: transparent;
+    color: #f2a25c;
+    border:none;
+    font-weight: bold;
+}
+

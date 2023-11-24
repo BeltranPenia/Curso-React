@@ -1,12 +1,21 @@
 import './ItemCounter.css'
 import { useState } from 'react';
+import { useContext } from 'react';
+import { cartContext } from '../Contexts/CartContext';
 
-const ItemCounter = ({stock,initial,onAdd}) => {
+const ItemCounter = ({product,initial}) => {
 
     const [count, setCount] = useState(initial);
 
+    const {addToCart} = useContext(cartContext);
+
+    const onAdd = (count) => {
+        addToCart(product,count);
+        setCount(initial);
+    }
+
     const add = () => {
-        if(count < stock){
+        if(count < product.stock){
             setCount(count + 1);
         }
     }
@@ -25,7 +34,7 @@ const ItemCounter = ({stock,initial,onAdd}) => {
             <button className='button' onClick={add}>+</button>
         </div>
         <div>
-            <button className='button' onClick={()=>onAdd(count)} disabled={!stock}>AGREGAR</button>
+            <button className='button' onClick={()=>onAdd(count)} disabled={!product.stock}>AGREGAR</button>
         </div>
     </div>
   )

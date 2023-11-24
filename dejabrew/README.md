@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# Inicializar un proyecto con React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Para inicializar un proyecto con React, podemos usar el comando ``npx create-react-app``. Este comando creará una carpeta con el nombre del proyecto y la inicializará con todos los archivos necesarios para empezar a desarrollar.
 
-## Available Scripts
+Por ejemplo, para crear un proyecto llamado ``mi-proyecto``, ejecutaríamos el siguiente comando:
 
-In the project directory, you can run:
+``npx create-react-app mi-proyecto``
+Esto creará una carpeta llamada ``mi-proyecto`` con los siguientes archivos:
 
-### `npm start`
+``package.json``: Este archivo contiene la información sobre el proyecto, como su nombre, versión, dependencias, etc.
+``src/App.js``: Este archivo contiene el componente principal de la aplicación.
+``index.js``: Este archivo es el punto de entrada de la aplicación.
+``README.md``: Este archivo contiene información sobre el proyecto.
+Una vez que hayamos inicializado el proyecto, podemos empezar a desarrollar. Para ejecutar la aplicación, podemos usar el comando ``npm start``. Este comando iniciará un servidor local en el puerto 3000.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Estructura del proyecto
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La estructura del proyecto creado por ``create-react-app`` es la siguiente:
 
-### `npm test`
+```
+mi-proyecto
+  ├── node_modules
+  ├── package.json
+  ├── public
+  │   ├── index.html
+  │   └── favicon.ico
+  └── src
+      ├── App.js
+      └── index.js
+```
+La carpeta ``node_modules`` contiene todas las dependencias del proyecto. La carpeta ``public`` contiene los archivos estáticos del proyecto, como el archivo ``index.html``. La carpeta ``src`` contiene el código fuente del proyecto.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Componentes
 
-### `npm run build`
+Los componentes son la unidad básica de construcción de las aplicaciones React. Un componente es un bloque de código que puede ser reutilizado en diferentes partes de la aplicación.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Para crear un componente, podemos crear un archivo JS con el nombre del componente. Por ejemplo, para crear un componente llamado ``MiComponente``, crearíamos un archivo llamado ``MiComponente.js``.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+El archivo ``MiComponente.js`` debe exportar una clase que extiende la clase ``React.Component``. La clase debe tener un método llamado render() que devuelve el elemento HTML que se mostrará en la pantalla.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Por ejemplo, el siguiente código crea un componente llamado ``MiComponente`` que muestra el texto "Hola, mundo":
 
-### `npm run eject`
+### JavaScript
+```
+import React from "react";
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+class MiComponente extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hola, mundo</h1>
+      </div>
+    );
+  }
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+export default MiComponente;
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Propiedades
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Los componentes pueden tener propiedades que se pueden usar para pasarle datos al componente. Las propiedades se definen como parámetros de la clase del componente.
 
-## Learn More
+Por ejemplo, el siguiente código crea un componente llamado ``MiComponente`` que tiene una propiedad llamada ``nombre``. La propiedad ``nombre`` se puede usar para pasar el nombre de una persona al componente.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### JavaScript
+```
+import React from "react";
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+class MiComponente extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nombre: props.nombre,
+    };
+  }
 
-### Code Splitting
+  render() {
+    return (
+      <div>
+        <h1>Hola, {this.state.nombre}</h1>
+      </div>
+    );
+  }
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+export default MiComponente;
+```
+## Estado
 
-### Analyzing the Bundle Size
+El estado es una variable que se puede usar para almacenar datos que cambian durante la ejecución de la aplicación. El estado se define como una propiedad de la clase del componente.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Por ejemplo, el siguiente código crea un componente llamado ``MiComponente`` que tiene un estado llamado ``contador``. El estado ``contador`` se incrementa en uno cada vez que se hace clic en un botón.
 
-### Making a Progressive Web App
+### JavaScript
+```
+import React from "react";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+class MiComponente extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      contador: 0,
+    };
+  }
 
-### Advanced Configuration
+  incrementar() {
+    this.setState({
+      contador: this.state.contador + 1,
+    });
+  }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  render() {
+    return}
+```
